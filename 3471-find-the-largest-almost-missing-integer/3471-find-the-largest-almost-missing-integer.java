@@ -7,14 +7,15 @@ class Solution {
             boolean[] present = new boolean[51];
 
             for (int j = i; j < i + k; j++) {
-                present[nums[j]] = true;
+                 if (!present[nums[j]]) {
+                    count[nums[j]]++;
+                    present[nums[j]] = true;
+                 }
             }
 
-            for (int x = 0; x <= 50; x++) {
-                if (present[x]) {
-                    count[x]++;
-                }
-            }
+            // for (int x = 0; x <= 50; x++) {
+               
+            // }
         }
 
         for (int x = 50; x >= 0; x--) {
