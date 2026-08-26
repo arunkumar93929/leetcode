@@ -1,11 +1,20 @@
 class Solution {
     public int countPartitions(int[] nums) {
-        int sum = 0;
-
-        for (int num : nums) {
-            sum += num;
+        int total= 0;
+        for(int x:nums){
+            total+=x;
         }
+        int cnt=0;
+        int left=0;
+        for(int i=0;i<nums.length-1;i++){
+             left +=nums[i];
+            int right= total-left;
 
-        return sum % 2 == 0 ? nums.length - 1 : 0;
+            if((left-right)%2==0){
+                cnt++;
+            }
+        }
+        return cnt;
+        
     }
 }
